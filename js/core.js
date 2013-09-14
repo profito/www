@@ -43,4 +43,3 @@ function tmpl(str){
             .split("\r").join("\\'") + "');} return p.join('');");
     return fn
 }
-

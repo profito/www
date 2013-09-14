@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -35,7 +35,6 @@
                     </div>
                     <div id="<%= BossLocations %>">
                         <div id="<%= monster %>" onclick='<%= monsterClick %> '> Monster </div>
-
                     </div>
                 </div>
         </script>
