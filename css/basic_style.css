@@ -1,0 +1,49 @@
+Body{
+    background: url('../images/bg.png');
+    background-size: cover;
+}
+#HeroStatus{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100px;
+    height:50px;
+    background: blue;
+}
+#HeroImg{
+    width:30px;
+    height:50px;
+    background: green;
+    float:left;
+}
+#Experience{
+    width:30px;
+    height:50px;
+    background: green;
+    float:left;
+    margin:0 5px 0 5px;
+}
+#XP{
+    width:30px;
+    height:50px;
+    background: green;
+    float:left;
+}
+#MainMenu{
+    width:150px;
+    height:50px;
+    position: absolute;
+    top:0;
+    right:0;
+    background: green;
+}
+#WindowLocations{
+    position:absolute;
+    display:table;
+    margin:0 0 0 50%;
+    left:-400px;
+    height:420px;
+    width:800px;
+    background:red;
+    top:50px;
+}

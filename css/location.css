@@ -1,0 +1,45 @@
+#ImgLocations{
+    width:600px;
+    height:400px;
+    background: blue;
+    float:left;
+    margin:10px 10px 10px 10px;
+}
+#ImgLocation{
+    width:600px;
+    height:300px;
+    background:yellow;
+    float:left;
+}
+#ImgLocationsDescription{
+    width:600px;
+    height:100px;
+    background: green;
+    float:left;
+}
+#MenuLocations{
+    width:170px;
+    height:400px;
+    background: blue;
+    float:right;
+    margin:10px 10px 10px 0;
+}
+#MoveLocations{
+    width:170px;
+    height:250px;
+    background: green;
+    float:right;
+}
+#BossLocations{
+    width:170px;
+    height:150px;
+    background: blue;
+    float:right;
+}
+/*#Chat{
+    width:100%;
+    height:50px;
+    background:yellow;
+    margin:0 0 0 0;
+    bottom:0;
+}*/

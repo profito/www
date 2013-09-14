@@ -1,0 +1,112 @@
+#StringName{
+    width:100%;
+    height:40px;
+    background:blue;
+}
+#NameHero{
+    width:40%;
+    height:100%;
+    float:left;
+    background: yellow;
+}
+#NameAntiHero{
+    width:40%;
+    height:100%;
+    float:right;
+    background: yellow;
+}
+#windowsHero{
+    float:left;
+    width:300px;
+    height:360px;
+    background: green;
+    margin:10px 10px 0 10px;
+}
+#logFight{
+    width:280px;
+    height:170px;
+    background: blue;
+    margin:10px 10px 10px 10px;
+}
+#skills{
+    width:280px;
+    height:160px;
+    background: blue;
+    margin:0 10px 0 10px;
+
+}
+#skillsOne{
+    width:85px;
+    height:80px;
+    background:red;
+    float:left;
+}
+#skillsTwo{
+    width:85px;
+    height:80px;
+    background:hotpink;
+    float:left;
+}
+#skillsThree{
+    width:85px;
+    height:80px;
+    background:darkmagenta;
+    float:left;
+}
+#skillsFour{
+    width:85px;
+    height:80px;
+    background:cyan;
+    float:left;
+}
+#skillsFive{
+    width:85px;
+    height:80px;
+    background:tomato;
+    float:left;
+}
+#skillsSix{
+    width:85px;
+    height:80px;
+    background:goldenrod;
+    float:left;
+}
+#windowsBattle{
+    width:80px;
+    height:360px;
+    background: blue;
+    float:left;
+    margin:10px 0 10px 0;
+}
+#field{
+    width:80px;
+    height:255px;
+    background: url('../images/lighter.png');
+    float:left;
+    margin:105px 0 0 0;
+    display: table;
+    position:absolute;
+}
+#roller{
+    width:100%;
+    height:10px;
+    position: inherit;
+    background: url('../images/roller.png');
+
+}
+#windowsAntiHero{
+    width:280px;
+    height:360px;
+    background: green;
+    float:left;
+    bottom: 0;
+    margin:10px 0 0 10px;
+}
+#windowsXPAntiHero{
+    width:90px;
+    height:50px;
+    background: green;
+    float:left;
+    bottom: 0;
+    margin:10px 0 0 10px;
+}
