@@ -20,7 +20,7 @@
 
         <!--Шаблон основного окна -->
         <script type="text/html" id="Locations" >
-            <div id="<%= ImgLocations %>">
+            <div id="ImgLocations">
                     <div id="<%= ImgLocation %>"></div>
                     <div id="<%= ImgLocationsDescription %>"></div>
                 </div>
@@ -82,3 +82,21 @@
 
 
 </html>
+<?php
+$get = $_GET[message];
+list($q) = explode(" ", $get);
+try {
+    $conn = new PDO('mysql:host=localhost; dbname=gamepc', profito, profito);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $data = $conn->query('SELECT * FROM user WHERE login = ' . $conn->quote($q));
+    foreach($data as $row) {
+        for($i=1;$i<=26;$i++){
+          //  print '<script language="javascript">alert("'.$row[$i].'")</script>';
+        }
+    }
+} catch(PDOException $e) {
+    echo 'ERROR: ' . $e->getMessage();
+}
+
+?>
