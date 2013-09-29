@@ -12,6 +12,8 @@
     <input name="form" id="key" placeholder="Пароль" />
 
     <input type="submit" id="enter" value="Вход" onclick="message()" />
+    <div><a href="registration.php">Регистрация</a></div>
+
 </div>
 <script src="js/open.js"></script>
 </body>
@@ -29,14 +31,14 @@ try {
     foreach($data as $row) {
         if($row[1]==$user){
             if($row[2]==$pass){
-                print_r($row[3]);
-                print '<script language="javascript">open("'.$row[1].'")</script>';
+                print '<script language="javascript">open("'.$row[0].'")</script>';
             }
         }
     }
 } catch(PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
+
 ?>
 
 
