@@ -7,35 +7,35 @@ Body{
     left:0;
     top:0;
     width:100px;
-    height:50px;
+    height:20px;
     background: blue;
 }
 #HeroImg{
     width:30px;
-    height:50px;
+    height:20px;
     background: green;
     float:left;
 }
 #Experience{
     width:30px;
-    height:50px;
+    height:20px;
     background: green;
     float:left;
     margin:0 5px 0 5px;
 }
 #XP{
     width:30px;
-    height:50px;
+    height:20px;
     background: green;
     float:left;
 }
 #MainMenu{
-    width:150px;
-    height:50px;
+    width:684px;
+    height:60px;
     position: absolute;
     top:0;
     right:0;
-    background: green;
+   /* background: url("../images/bgmenu.jpg");*/
 }
 #WindowLocations{
     position:absolute;
@@ -46,4 +46,89 @@ Body{
     width:800px;
     background:red;
     top:50px;
+
 }
+#WindowMenu{
+    position:absolute;
+    display:table;
+    margin:0 0 0 50%;
+    left:-400px;
+    height:420px;
+    width:800px;
+    background:red;
+    top:50px;
+    display: none;
+}
+
+.elementMainMenu{
+    width:70px;
+    height: 20px;
+    border:2px solid black;
+    float:left;
+    margin:2px
+}
+
+#MenuUser{
+    position:absolute;
+    display:table;
+    margin:0 0 0 50%;
+    left:-400px;
+    height:420px;
+    width:800px;
+    background:red;
+    top:50px;
+    display: none;
+}
+
+#leftMenu{
+    height:400px;
+    width: 385px;
+    background:white;
+    margin:10px;
+    float:left;
+
+}
+#rightMenu{
+    height:350px;
+    width:385px;
+    background:white;
+    margin:0 10px 10px 0;
+    float:left;
+}
+
+#MenuForMenuRight{
+    background: green;
+    width:385px;
+    height:50px;
+    margin:10px 10px 0 0;
+    float:left;
+
+}
+
+.menuForRight{
+    float:left;
+    width:60px;
+    height:50px;
+    margin:0 10px 0 0;
+}
+
+.thingMenu{
+    width:40px;
+    height: 40px;
+    background: blue;
+    margin:10px 10px 10px 10px;
+
+}
+
+.qwe{
+    float:left;
+    margin:1px;
+}
+
+
+
+
+
+
+
+

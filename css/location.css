@@ -43,3 +43,19 @@
     margin:0 0 0 0;
     bottom:0;
 }*/
+
+
+#lists{
+    width:600px;
+    height:400px;
+    background:white;
+    float:left;
+}
+
+#MenuRating{
+    width:170px;
+    height:400px;
+    background: white;
+    float:right;
+    margin:10px 10px 10px 0;
+}
