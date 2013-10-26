@@ -42,3 +42,4 @@ Hero = function (obj) {
             .split("\r").join("\\'") + "');} return p.join('');");
             return fn
         }
+

@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html  oncontextmenu="return false">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -30,11 +29,9 @@ try {
     $data = $conn->query('SELECT * FROM user WHERE login = ' . $conn->quote($user));
     foreach($data as $row) {
         if($row[1]==$user){
-            if($row[2]==$pass){
-                print '<script language="javascript">open("'.$row[0].'")</script>';
+                print '<script language="javascript">document.cookie = "name=login; domain=pcgame.ru"; open("'.$row[0].'")</script>';
             }
         }
-    }
 } catch(PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }

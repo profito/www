@@ -46,7 +46,7 @@ if($nameRegistration<>''or $keyRegistration<>'' or $emailRegistration<>''){
         foreach($data as $rows) {
               $idUser=$rows[0];
         }
-        mysql_query("INSERT INTO `bag`(`iduser`,`idthing1`,`idthing2`,`idthing3`,`idthing4`,`idthing5`,`idthing6`,`state`) VALUES('$idUser','1','1','1','1','1','1','1')",$link) or die("ERROR: ".mysql_error());
+        mysql_query("INSERT INTO `bag`(`iduser`,`helmet`,`weapon`,`shield`,`armor`,`knee`,`freeSlot`,`state`) VALUES('$idUser','1','1','1','1','1','1','0')",$link) or die("ERROR: ".mysql_error());
         $data = $conn->query('SELECT idbag FROM bag WHERE iduser = ' . $conn->quote($idUser));
         foreach($data as $rows) {
             $idBag=$rows[0];

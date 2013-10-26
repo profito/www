@@ -57,11 +57,11 @@
        <!--меня пользователя-->
         <div id="MenuUser">
             <div id="leftMenu">
-                <div class="thingMenu" id="">1</div>
-                <div class="thingMenu" id="">2</div>
-                <div class="thingMenu" id="">3</div>
-                <div class="thingMenu" id="">4</div>
-                <div class="thingMenu" id="">5</div>
+                <div class="thingMenu" id="thing1"></div>
+                <div class="thingMenu" id="thing2"></div>
+                <div class="thingMenu" id="thing3"></div>
+                <div class="thingMenu" id="thing4"></div>
+                <div class="thingMenu" id="thing5"></div>
             </div>
             <div id="MenuForMenuRight">
                 <div class="menuForRight" id="">Мешок</div>
@@ -147,6 +147,9 @@
 
 </html>
 <?php
+$get = $_GET[message];
+list($idUser) = explode("!", $get);
+
 //1 способ
 $conn = new PDO('mysql:host=localhost; dbname=gamepc', profito, profito);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -160,9 +163,10 @@ $qe=$row[0];
 for($i=0;$i<=$qe;$i++){
 $data = $conn->query('SELECT * FROM user WHERE iduser = ' . $conn->quote($i));
     foreach($data as $row) {
-        print '<script language="javascript">lists("'.$row[1].'%'.$row['keys'].'%'.$row[5].'%'.$row[6].'%'.$row[7].'%'.$row[8].'")</script>';
+        print '<script language="javascript"> lists("'.$row[1].'%'.$row['keys'].'%'.$row[5].'%'.$row[6].'%'.$row[7].'%'.$row[8].'")</script>';
     }
 }
-
+$bag = mysql_fetch_array(mysql_query("SELECT * FROM user, bag, helmet, weapon, shield, armor, knee WHERE user.idbag= bag.idbag and bag.helmet= helmet.idthing and bag.weapon= weapon.idthing  and bag.shield= shield.idthing  and bag.armor= armor.idthing  and bag.knee= knee.idthing  and user.iduser='$idUser'",$link));//последний id
+print '<script language="javascript">bag("'.$bag[name].','.$bag[helmeturl].','.$bag[weaponurl].','.$bag[shieldurl].','.$bag[armorurl].','.$bag[kneeurl].'")</script>';
 
 ?>

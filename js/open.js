@@ -1,5 +1,7 @@
-function open(nameUser){
-    window.location.href='indexpc.php?message='+encodeURIComponent(""+nameUser);
+function open(uName){
+    var cooki = document.cookie,
+        getCo=cooki.split("=");
+    window.location.href='indexpc.php?message='+encodeURIComponent(""+uName);
 }
 
 function message(){
@@ -20,4 +22,3 @@ function registration(){
 function entrance(){
     window.location.href='index.php?message=';
 }
-
