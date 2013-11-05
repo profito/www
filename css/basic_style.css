@@ -39,12 +39,13 @@ Body{
 }
 #WindowLocations{
     position:absolute;
-    display:table;
+    display:none;
     margin:0 0 0 50%;
     left:-400px;
     height:420px;
     width:800px;
     background:red;
+
     top:50px;
 
 }
@@ -57,7 +58,7 @@ Body{
     width:800px;
     background:red;
     top:50px;
-    display: none;
+<<<<<<< HEAD
 }
 
 .elementMainMenu{
@@ -70,7 +71,13 @@ Body{
 
 #MenuUser{
     position:absolute;
+=======
+
+}
+#WindowMenu{
+    position:absolute;
     display:table;
+>>>>>>> 952702c3c884b8ae00885f2d131cd77fb4034958
     margin:0 0 0 50%;
     left:-400px;
     height:420px;
@@ -80,6 +87,7 @@ Body{
     display: none;
 }
 
+<<<<<<< HEAD
 #leftMenu{
     height:400px;
     width: 385px;
@@ -113,11 +121,36 @@ Body{
 }
 
 .thingMenu{
-    width:40px;
-    height: 40px;
+    width:90px;
+    height: 90px;
     background: blue;
-    margin:10px 10px 10px 10px;
+    margin:30px 30px 30px 30px;
+    border:1px solid black;
+}
+#thing1{
+    margin:0 50%;
+    left:-45px;
+    position: relative;
+}
+#thing2{
+    float:left;
+    margin:30px 100px 30px 30px;
+}
 
+#thing3{
+    float:right;
+}
+
+#thing4{
+    float:left;
+}
+
+#thing5{
+    float:right
+}
+
+#divClear{
+    clear:none;
 }
 
 .qwe{
@@ -125,10 +158,59 @@ Body{
     margin:1px;
 }
 
+.MenuBagThing{
+    float:left;
+    margin:10px;
+    background: #ababab;
+    border:1px solid #696969;
+    width:50px;
+    height:50px;
+}
 
+.MenuBagState{
+    float:left;
+    margin:10px 20px;
+    background: #ababab;
+    border:1px solid #696969;
+    width:80px;
+    height:80px;
+}
 
+#RightMenuBag{
+    display: none;
+}
 
+.stringMenuState{
+    float:left;
+    margin:10px 0;
+    background: #ababab;
+    border:1px solid #696969;
+    width:90px;
+    height:30px;
+}
 
+.bottomMenuState{
+    margin:0 0 0 0;
+    height:25px;
+}
 
+.State{
+    width:200px;
+}
 
-
+.exit{
+    position: absolute;
+    width:20px;
+    height: 20px;
+    top:10px;
+    right: 20px;
+    background: blanchedalmond;
+=======
+.elementMainMenu{
+    width:70px;
+    height: 20px;
+    border:2px solid black;
+    float:left;
+    margin:2px
+>>>>>>> 952702c3c884b8ae00885f2d131cd77fb4034958
+}

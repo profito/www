@@ -17,7 +17,11 @@
             <div id='XP'></div>
         </div>
         <div id='MainMenu'>
+<<<<<<< HEAD
             <div class="elementMainMenu" id="menuUser">игрок</div>
+=======
+            <div class="elementMainMenu">игрок</div>
+>>>>>>> 952702c3c884b8ae00885f2d131cd77fb4034958
             <div class="elementMainMenu">задания</div>
             <div class="elementMainMenu">вилла</div>
             <div class="elementMainMenu">клан</div>
@@ -28,6 +32,11 @@
         </div>
         <div id="WindowLocations"></div>
         <div id="WindowMenu">
+<<<<<<< HEAD
+            <div class="exit" onclick="Exit()">x</div>
+
+=======
+>>>>>>> 952702c3c884b8ae00885f2d131cd77fb4034958
             <div id="ImgLocations">
                 <div id="lists">
                     <table id="olMenu">
@@ -52,29 +61,76 @@
             </div>
         </div>
 
+<<<<<<< HEAD
 
 
        <!--меня пользователя-->
         <div id="MenuUser">
             <div id="leftMenu">
-                <div class="thingMenu" id="">1</div>
-                <div class="thingMenu" id="">2</div>
-                <div class="thingMenu" id="">3</div>
-                <div class="thingMenu" id="">4</div>
-                <div class="thingMenu" id="">5</div>
+                <div class="thingMenu" id="thing1"></div>
+                <div class="thingMenu" id="thing2"></div>
+                <div class="thingMenu" id="thing3"></div>
+                <div class="thingMenu" id="thing4"></div>
+                <div class="thingMenu" id="thing5"></div>
             </div>
             <div id="MenuForMenuRight">
-                <div class="menuForRight" id="">Мешок</div>
-                <div class="menuForRight" id="">Статы</div>
-                <div class="menuForRight" id="">Анкета</div>
-                <div class="menuForRight" id="">Таланты</div>
-                <div class="menuForRight" id="">x</div>
+                <div class="menuForRight" id="bag">Мешок</div>
+                <div class="menuForRight" id="stats">Статы</div>
+                <div class="menuForRight" id="questionnaire">Анкета</div>
+                <div class="menuForRight" id="talents">Таланты</div>
+                <div class="menuForRight exit"onclick="Exit()">x</div>
             </div>
             <div id="rightMenu">
+                <div id="RightMenuBag">
+                    <div class="MenuBagThing" id=""></div>
+                    <div class="MenuBagThing" id=""></div>
+                    <div class="MenuBagThing" id=""></div>
+                    <div class="MenuBagThing" id=""></div>
+                    <div class="MenuBagThing" id=""></div>
+                    <div class="MenuBagThing" id=""></div>
+                    <div class="MenuBagThing" id=""></div>
+                    <div class="MenuBagThing" id=""></div>
+                    <div class="MenuBagThing" id=""></div>
+                    <div class="MenuBagThing" id=""></div>
+                    <div class="MenuBagState" id=""></div>
+                    <div class="MenuBagState" id=""></div>
+                    <div class="MenuBagState" id=""></div>
+                    <div class="MenuBagState" id=""></div>
+                    <div class="MenuBagState" id=""></div>
+                    <div class="MenuBagState" id=""></div>
+                </div>
+                <div id="RightMenuState">
+                    <div class="stringMenuState" id="">Мышци</div>
+                    <div class="stringMenuState" id="">1</div>
+                    <div class="stringMenuState" id="">0</div>
+                    <div class="stringMenuState" id="">+</div>
+                    <div class="stringMenuState" id="">Жир</div>
+                    <div class="stringMenuState" id="">1</div>
+                    <div class="stringMenuState" id="">0</div>
+                    <div class="stringMenuState" id="">+</div>
+                    <div class="stringMenuState" id="">Резкость</div>
+                    <div class="stringMenuState" id="">1</div>
+                    <div class="stringMenuState" id="">0</div>
+                    <div class="stringMenuState" id="">+</div>
+                    <div class="stringMenuState" id="">Извилины</div>
+                    <div class="stringMenuState" id="">1</div>
+                    <div class="stringMenuState" id="">0</div>
+                    <div class="stringMenuState" id="">+</div>
+                    <div class="stringMenuState bottomMenuState" id="">Крутость</div>
+                    <div class="stringMenuState bottomMenuState State" id="">1</div>
+                    <div class="stringMenuState bottomMenuState" id="">Здоровье</div>
+                    <div class="stringMenuState bottomMenuState State" id="">1</div>
+                    <div class="stringMenuState bottomMenuState" id="">Раса</div>
+                    <div class="stringMenuState bottomMenuState State" id="">1</div>
+                    <div class="stringMenuState bottomMenuState" id="">Класс</div>
+                    <div class="stringMenuState bottomMenuState State" id="">1</div>
+                </div>
             </div>
         </div>
 
 
+=======
+>>>>>>> 952702c3c884b8ae00885f2d131cd77fb4034958
         <!--Шаблон окна рейтинга -->
         <script type="text/html" id="Rating" >
             <tr><%= elementList %></tr>
@@ -147,6 +203,34 @@
 
 </html>
 <?php
+<<<<<<< HEAD
+$get = $_GET[message];
+list($idUser) = explode("!", $get);
+
+//1 способ
+$conn = new PDO('mysql:host=localhost; dbname=gamepc', profito, profito);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//2 способ
+$link = mysql_connect('localhost','profito','profito');
+mysql_select_db('gamepc');
+
+$row = mysql_fetch_array(mysql_query("  SELECT `userId` FROM `user` ORDER BY `userId` DESC LIMIT 1",$link));//последний id
+$qe=$row[0];
+
+for($i=0;$i<=$qe;$i++){
+$data = $conn->query('SELECT * FROM user WHERE userId = ' . $conn->quote($i));
+    foreach($data as $row) {
+        print '<script language="javascript"> lists("'.$row[1].'%'.$row['keys'].'%'.$row[5].'%'.$row[6].'%'.$row[7].'%'.$row[8].'")</script>';
+    }
+}
+//$bag = mysql_fetch_array(mysql_query("SELECT * FROM user, bag, helmet, weapon, shield, armor, knee WHERE user.idbag= bag.idbag and bag.helmet= helmet.idthing and bag.weapon= weapon.idthing  and bag.shield= shield.idthing  and bag.armor= armor.idthing  and bag.knee= knee.idthing  and user.iduser='$idUser'",$link));//последний id
+//print '<script language="javascript">bag("'.$bag[name].','.$bag[helmeturl].','.$bag[weaponurl].','.$bag[shieldurl].','.$bag[armorurl].','.$bag[kneeurl].'")</script>';
+$data = $conn->query('SELECT * FROM user u LEFT JOIN (bag b LEFT JOIN ( thing t LEFT JOIN (features_thing ft LEFT JOIN (kit k )ON k.kitId = ft.kitId) ON ft.thingId=t.thingId) ON t.thingId=b.thingId) on b.bagId=u.bagId WHERE u.userId='.$conn->quote($idUser));
+foreach($data as $row) {
+    print '<script language="javascript"> t("'.$row[userId].'","'.$row[thingId].'","'.$row[state].'","'.$row[urlImg].'","'.$row[attribute].'","'. $row[value].'")</script>';
+}
+?>
+=======
 //1 способ
 $conn = new PDO('mysql:host=localhost; dbname=gamepc', profito, profito);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -160,9 +244,10 @@ $qe=$row[0];
 for($i=0;$i<=$qe;$i++){
 $data = $conn->query('SELECT * FROM user WHERE iduser = ' . $conn->quote($i));
     foreach($data as $row) {
-        print '<script language="javascript">lists("'.$row[1].'%'.$row['keys'].'%'.$row[5].'%'.$row[6].'%'.$row[7].'%'.$row[8].'")</script>';
+        print '<script language="javascript">lists("'.$row[1].'%'.$row[3].'%'.$row[5].'%'.$row[6].'%'.$row[7].'%'.$row[8].'")</script>';
     }
 }
 
 
 ?>
+>>>>>>> 952702c3c884b8ae00885f2d131cd77fb4034958

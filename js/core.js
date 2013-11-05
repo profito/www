@@ -42,3 +42,14 @@ Hero = function (obj) {
             .split("\r").join("\\'") + "');} return p.join('');");
             return fn
         }
+
+function Exit(){
+    document.getElementById("MenuUser").style.display="none";
+    document.getElementById("WindowMenu").style.display="none";
+
+}
+
+
+function t(userId,thingId, state, urlImg, attribute, value){
+    alert(userId+'%'+thingId+'%'+state+'%'+urlImg+'%'+attribute+value);
+}

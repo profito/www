@@ -1,6 +1,67 @@
-﻿
+<<<<<<< HEAD
+﻿<!DOCTYPE html>
+<html  oncontextmenu="return false">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Регистрация</title>
+</head>
+<body >
+<div>Регистрация</div>
 
-<!DOCTYPE html>
+<div id="registration">
+    <input name="form" id="nameRegistration" placeholder="Имя пользователя" />
+    <input name="form" id="emailRegistration" placeholder="e-mail" />
+    <input name="form" id="keyRegistration" placeholder="Пароль" />
+    <input type="submit" id="enter" value="Вход" onclick="registration()" />
+</div>
+<script src="js/open.js"></script>
+</body>
+</html>
+<?php
+$get = $_GET[message];
+list($nameRegistration,$keyRegistration,$emailRegistration) = explode("!", $get);
+if($nameRegistration<>''or $keyRegistration<>'' or $emailRegistration<>''){
+
+    $conn = new PDO('mysql:host=localhost; dbname=gamepc', profito, profito);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $link = mysql_connect('localhost','profito','profito');
+    mysql_select_db('gamepc');
+    $row = mysql_fetch_array(mysql_query("  SELECT `userId` FROM `user` ORDER BY `userId` DESC LIMIT 1",$link));//последний id
+    $qe=$row[0];
+    $s=0;
+    for($i=0;$i<=$qe;$i++){
+        $data = $conn->query('SELECT * FROM user WHERE userId = ' . $conn->quote($i));
+        foreach($data as $rows) {
+            if($rows[1]==$nameRegistration){
+                print '<script language="javascript">alert("Имя занято");</script>';
+                $s=1;
+            }
+        }
+    }
+    if($s==0){
+        mysql_query("INSERT INTO `user`(`name`,`login`,`keys`,`e-mail`) VALUES('$nameRegistration','$nameRegistration','$keyRegistration','$emailRegistration')",$link) or die("ERROR: ".mysql_error());
+        $data = $conn->query('SELECT userId FROM user WHERE login = ' . $conn->quote($nameRegistration));
+        foreach($data as $rows) {
+              $idUser=$rows[0];
+        }
+        mysql_query("INSERT INTO `bag`(`bagId`,`thingId`,`state`) VALUES('$idUser','1','0')",$link) or die("ERROR: ".mysql_error());
+        $data = $conn->query('SELECT bagId FROM bag WHERE bagId = ' . $conn->quote($idUser));
+        foreach($data as $rows) {
+            $idBag=$rows[0];
+        }
+        mysql_query("UPDATE `user` SET `bagId`='$idBag' WHERE bagId='$idUser'")or die("ERROR: ".mysql_error());
+
+        print '<script language="javascript">entrance()</script>';
+    }
+}
+else{
+}
+?>
+
+
+=======
+﻿<!DOCTYPE html>
 <html  oncontextmenu="return false">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -42,22 +103,10 @@ if($nameRegistration<>''or $keyRegistration<>'' or $emailRegistration<>''){
     }
     if($s==0){
         mysql_query("INSERT INTO `user`(`name`,`login`,`keys`,`e-mail`) VALUES('$nameRegistration','$nameRegistration','$keyRegistration','$emailRegistration')",$link) or die("ERROR: ".mysql_error());
-        $data = $conn->query('SELECT iduser FROM user WHERE login = ' . $conn->quote($nameRegistration));
-        foreach($data as $rows) {
-              $idUser=$rows[0];
-        }
-        mysql_query("INSERT INTO `bag`(`iduser`,`idthing1`,`idthing2`,`idthing3`,`idthing4`,`idthing5`,`idthing6`,`state`) VALUES('$idUser','1','1','1','1','1','1','1')",$link) or die("ERROR: ".mysql_error());
-        $data = $conn->query('SELECT idbag FROM bag WHERE iduser = ' . $conn->quote($idUser));
-        foreach($data as $rows) {
-            $idBag=$rows[0];
-        }
-        mysql_query("UPDATE `user` SET `idbag`='$idBag' WHERE iduser='$idUser'");
-
-        print '<script language="javascript">entrance()</script>';
+        print '<script language="javascript">entrance();</script>';
     }
 }
 else{
 }
 ?>
-
-
+>>>>>>> 952702c3c884b8ae00885f2d131cd77fb4034958
