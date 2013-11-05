@@ -43,3 +43,13 @@ Hero = function (obj) {
             return fn
         }
 
+function Exit(){
+    document.getElementById("MenuUser").style.display="none";
+    document.getElementById("WindowMenu").style.display="none";
+
+}
+
+
+function t(userId,thingId, state, urlImg, attribute, value){
+    alert(userId+'%'+thingId+'%'+state+'%'+urlImg+'%'+attribute+value);
+}
